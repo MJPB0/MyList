@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/splash">
+
+    <fragment
+        android:id="@+id/addList"
+        android:name="com.example.shoppinglist.new_list.AddList"
+        android:label="add_list_fragment"
+        tools:layout="@layout/add_list_fragment" />
+    <fragment
+        android:id="@+id/addProductToList"
+        android:name="com.example.shoppinglist.add_product_to_list.AddProductToList"
+        android:label="add_product_to_list_fragment"
+        tools:layout="@layout/add_product_to_list_fragment" />
+    <fragment
+        android:id="@+id/splash"
+        android:name="com.example.shoppinglist.splash.Splash"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splash_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listEdit"
+        android:name="com.example.shoppinglist.edit_list.ListEdit"
+        android:label="list_edit_fragment"
+        tools:layout="@layout/list_edit_fragment" >
+        <action
+            android:id="@+id/action_listEdit_to_addProductToList"
+            app:destination="@id/addProductToList" />
+        <action
+            android:id="@+id/action_listEdit_to_addedProductInformation"
+            app:destination="@id/addedProductInformation" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.shoppinglist.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_productsDisplay"
+            app:destination="@id/productsDisplay" />
+        <action
+            android:id="@+id/action_mainFragment_to_addList"
+            app:destination="@id/addList" />
+        <action
+            android:id="@+id/action_mainFragment_to_listEdit"
+            app:destination="@id/listEdit" />
+    </fragment>
+    <fragment
+        android:id="@+id/productInformation"
+        android:name="com.example.shoppinglist.product_info.ProductInformation"
+        android:label="product_information_fragment"
+        tools:layout="@layout/product_information_fragment" />
+    <fragment
+        android:id="@+id/productsDisplay"
+        android:name="com.example.shoppinglist.show_products.ProductsDisplay"
+        android:label="products_display_fragment"
+        tools:layout="@layout/products_display_fragment" >
+        <action
+            android:id="@+id/action_productsDisplay_to_productInformation"
+            app:destination="@id/productInformation" />
+    </fragment>
+    <fragment
+        android:id="@+id/addedProductInformation"
+        android:name="com.example.shoppinglist.added_product_info.AddedProductInformation"
+        android:label="added_product_information_fragment"
+        tools:layout="@layout/added_product_information_fragment" />
+</navigation>
